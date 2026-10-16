@@ -26,23 +26,23 @@
 
 ### 1. PCで案件を検索
 
-![官公庁案件検索のPC画面。実データの件数、キーワード、業務分類と案件一覧](docs/screenshots/01-search-desktop.png)
+![官公庁案件検索のPC画面。実データの件数、キーワード、業務分類と案件一覧](https://raw.githubusercontent.com/shunsoco-stack/public-procurement-search/19b561c580fd9a8aea5fd7452e1aaa7a224eaafc/docs/screenshots/01-search-desktop.png)
 
 ### 2. Web制作・資料リンクで絞り込み
 
-![Web制作の分類と資料がある案件の条件で絞り込んだ検索結果](docs/screenshots/02-filtered-results.png)
+![Web制作の分類と資料がある案件の条件で絞り込んだ検索結果](https://raw.githubusercontent.com/shunsoco-stack/public-procurement-search/19b561c580fd9a8aea5fd7452e1aaa7a224eaafc/docs/screenshots/02-filtered-results.png)
 
 ### 3. 案件詳細と公式公告
 
-![実在案件の詳細。公告本文、資料への導線、条件確認と公式公告のリンク](docs/screenshots/03-notice-detail.png)
+![実在案件の詳細。公告本文、資料への導線、条件確認と公式公告のリンク](https://raw.githubusercontent.com/shunsoco-stack/public-procurement-search/19b561c580fd9a8aea5fd7452e1aaa7a224eaafc/docs/screenshots/03-notice-detail.png)
 
 ### 4. 自分の条件を保存
 
-![対応スキルと資格・希望条件のメモをブラウザーに保存する画面](docs/screenshots/04-profile-matching.png)
+![対応スキルと資格・希望条件のメモをブラウザーに保存する画面](https://raw.githubusercontent.com/shunsoco-stack/public-procurement-search/19b561c580fd9a8aea5fd7452e1aaa7a224eaafc/docs/screenshots/04-profile-matching.png)
 
 ### 5. スマートフォン
 
-![スマートフォンで実際の案件を検索するレスポンシブ画面](docs/screenshots/05-search-mobile.png)
+![スマートフォンで実際の案件を検索するレスポンシブ画面](https://raw.githubusercontent.com/shunsoco-stack/public-procurement-search/19b561c580fd9a8aea5fd7452e1aaa7a224eaafc/docs/screenshots/05-search-mobile.png)
 
 ## データの範囲と正確性
 
