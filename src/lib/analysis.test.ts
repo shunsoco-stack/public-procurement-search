@@ -26,6 +26,12 @@ describe("classification", () => {
     expect(classifyNotice("MAIL SERVERの賃貸借", "").categories).toEqual(["other"]);
     expect(classifyNotice("医療用PCRテストキットの購入", "").categories).toEqual(["other"]);
   });
+  it("does not infer a web contract from a physical job's website instructions", () => {
+    const footer = "申請様式はホームページから更新版を取得してください。";
+    expect(classifyNotice("エコパーク案内看板設置業務委託", footer).categories).toEqual(["other"]);
+    expect(classifyNotice("庁舎の設備維持管理業務委託(冷暖房設備)", footer).categories).toEqual(["other"]);
+    expect(classifyNotice("Webサイト更新業務", footer).categories).toEqual(["web"]);
+  });
 });
 
 describe("evidence candidates", () => {

@@ -46,7 +46,7 @@ const RULES: Rule[] = [
     ["チャットボット", /チャットボット/], ["データ分析", /データ分析|文書分類|機械学習/]
   ], body: /(?:生成AI|人工知能|チャットボット|データ分析|機械学習).{0,18}(?:導入|構築|活用|支援|開発)/i }
 ];
-const UNRELATED_TITLE = /(?:清掃|警備|植栽|除草|橋梁|舗装|道路工事|改修工事|空調設備|給食|医薬品|賃貸借|物品購入)/;
+const UNRELATED_TITLE = /(?:清掃|警備|植栽|除草|橋梁|舗装|道路工事|改修工事|空調設備|設備維持管理|冷暖房|看板設置|給食|医薬品|賃貸借|物品購入)/;
 
 export function classifyNotice(title: string, description: string): { categories: CategoryId[]; matchedKeywords: string[] } {
   const heading = cleanText(title);
