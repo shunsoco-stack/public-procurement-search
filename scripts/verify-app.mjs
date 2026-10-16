@@ -38,6 +38,7 @@ try {
   assert(await page.locator(".notice-row").count() > 0);
   await page.keyboard.press("Tab");
   assert.equal(await page.locator(".skip-link").evaluate(el => el === document.activeElement), true, "Keyboard skip link must be first");
+  await page.locator(".skip-link").evaluate(el => el.blur());
   await noOverflow(page);
   await shot(page, "01-search-desktop.png");
 
@@ -78,6 +79,7 @@ try {
   await page.getByLabel("資格・登録のメモ", { exact: true }).fill("資格の区分・有効期間を原典で照合する");
   await page.getByRole("button", { name: "条件を保存", exact: true }).click();
   await page.getByText("このブラウザーに保存しました", { exact: true }).waitFor();
+  await page.evaluate(() => window.scrollTo(0, 0));
   await shot(page, "04-profile-matching.png");
   await page.reload({ waitUntil: "networkidle" });
   assert.equal(await page.getByRole("button", { name: "Web制作", exact: true }).getAttribute("aria-pressed"), "true");
@@ -108,6 +110,10 @@ try {
     await page.getByRole("heading", { name: "案件を探す", exact: true }).waitFor();
     await noOverflow(page);
     if (name === "mobile") {
+      if (capture) await page.locator(".results-section").evaluate(el => {
+        const headerHeight = document.querySelector(".sidebar").getBoundingClientRect().height;
+        window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - headerHeight - 24);
+      });
       await shot(page, "05-search-mobile.png");
       await navigate(page, "/saved");
       await page.getByRole("heading", { name: "気になる案件を保存しましょう", exact: true }).waitFor();

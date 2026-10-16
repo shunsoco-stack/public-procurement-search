@@ -127,6 +127,17 @@ npm run scan:secrets
 
 CIはNode.js 24でlint・型検査・単体テスト・ビルド・Secret Scanを実施します。DB資格情報はCIへ渡さず、実データE2Eは対象の実行環境で別途確認します。
 
+## Productionへの更新
+
+現在はVercel CLIでProductionを更新しています。GitHubへのpushだけでは本番は更新されません。管理者は対象チーム・プロジェクトを確認してから実行してください。
+
+```sh
+vercel link --project public-procurement-search --scope shunsoco-stacks-projects
+vercel --prod --scope shunsoco-stacks-projects
+```
+
+DBスキーマを変更する場合は、先に対象DBへのマイグレーションを確認してください。公開後は本番URLでE2Eとヘルスチェックを実行し、収集状況も確認します。`vercel.json`の日次CronはProductionに登録されます。
+
 ## 公開・掲載資料
 
 - [ポートフォリオ掲載用プロンプト](docs/PORTFOLIO_INTEGRATION_PROMPT.md)
