@@ -1,0 +1,46 @@
+{
+  "name": "public-procurement-search",
+  "version": "1.0.0",
+  "private": true,
+  "description": "官公需情報ポータルの公式APIから案件を収集する官公庁案件検索",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev --port 3037",
+    "build": "next build",
+    "start": "next start --port 3037",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "db:migrate": "tsx --env-file=.env.local scripts/migrate.ts",
+    "data:sync": "tsx --env-file=.env.local scripts/sync.ts",
+    "test:e2e": "node scripts/verify-app.mjs",
+    "test:a11y": "node scripts/accessibility.mjs",
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "scan:secrets": "node scripts/secret-scan.mjs"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.4.0",
+    "fast-xml-parser": "^5.3.0",
+    "lucide-react": "^1.28.0",
+    "next": "16.3.0",
+    "pg": "^8.16.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@types/node": "^26.1.2",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.3.0",
+    "playwright": "^1.63.0",
+    "tsx": "^4.23.5",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}

@@ -1,0 +1,9 @@
+.git
+.cache
+.agents
+.env*
+docs
+.github
+node_modules
+*.log
+*.tsbuildinfo
