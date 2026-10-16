@@ -19,6 +19,8 @@ describe("classification", () => {
   it("does not classify a cleaning job as automation merely because a form uses Excel", () => {
     const result = classifyNotice("庁舎清掃業務", "申請書はExcel形式。CSV形式による実績一覧を提出。");
     expect(result.categories).toEqual(["other"]);
+    expect(classifyNotice("ため池耐震診断業務委託(PDFファイル:154.9KB)", "公告書をPDFで公開します。").categories).toEqual(["other"]);
+    expect(classifyNotice("PDFデータの変換・抽出業務委託", "").categories).toEqual(["automation"]);
   });
   it("treats unrelated ASCII words as words, not an AI service", () => {
     expect(classifyNotice("MAIL SERVERの賃貸借", "").categories).toEqual(["other"]);
