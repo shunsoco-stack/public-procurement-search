@@ -7,6 +7,7 @@ import { NoticeList } from "@/components/notice-list";
 import { Pagination } from "@/components/pagination";
 import { DataUnavailable, EmptyState, PageHeading } from "@/components/ui";
 import { collectionIsStale, countLabel, dateLabel } from "@/components/format";
+import { NinjaAdMaxSlot } from "@/components/ninja-admax-slot";
 
 export const dynamic = "force-dynamic";
 
@@ -34,5 +35,6 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
       </section>
       <div className="scope-note"><Info size={16} aria-hidden="true" /><p>公式APIで取得できた案件を掲載しています。全国の全案件を網羅していません。掲載情報だけでは、参加可否や現在の受付状況は判断できません。<Link href="/coverage">収集範囲を確認</Link></p></div>
     </>}
-  </>;
+        <NinjaAdMaxSlot />
+    </>;
 }

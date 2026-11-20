@@ -42,7 +42,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="workspace">
       <header className="workspace-toolbar"><span className="toolbar-title">小さな事業の、次の機会へ。</span><span className="toolbar-source"><span className="status-dot" />公式データをもとに掲載</span></header>
       <main id="main-content" className="main-content" tabIndex={-1}>{children}</main>
-      <footer className="workspace-footer"><span>官公庁案件検索</span><p>出典：<a href={SOURCE_URL} target="_blank" rel="noopener noreferrer">官公需情報ポータルサイト</a> 検索API　｜　最終的な内容・参加条件は公式公告でご確認ください。</p></footer>
+      <footer className="workspace-footer"><span>官公庁案件検索</span><p>出典：<a href={SOURCE_URL} target="_blank" rel="noopener noreferrer">官公需情報ポータルサイト</a> 検索API　｜　最終的な内容・参加条件は公式公告でご確認ください。　｜　<Link href="/privacy">プライバシーポリシー</Link></p></footer>
     </div>
   </div>;
 }
